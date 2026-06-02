@@ -37,6 +37,18 @@ def acertou ():
         texto.config(text="Acabaram as chances!\nVoçe venceu")
     else:
         texto.config(text=f"acertamos seu numero é: {ale}")
+def recomeco():
+    global limite_menor
+    global limite_maior
+    global ale
+    global chances
+    ale = random.randint(0,100)
+    chances= 5
+    limite_maior =100
+    limite_menor = 0 
+    texto.config(text=f"Seu número é {ale}") 
+    texto2.config(text=f"vidas: {chances}")
+
 
 
 janela = tk.Tk()
@@ -53,5 +65,7 @@ botao2 = tk.Button(janela,text="menor",command=menor)
 botao2.pack()
 botao3 = tk.Button(janela,text="acertou",command=acertou)
 botao3.pack()
+botao4 = tk.Button(janela,text="recomeçar",command=recomeco)
+botao4.pack()
 texto.pack()
 janela.mainloop()
